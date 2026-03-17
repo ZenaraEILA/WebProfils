@@ -1,0 +1,308 @@
+/* App-specific styles */
+
+/* Smooth scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom cursor effect */
+@media (hover: hover) {
+  .custom-cursor {
+    cursor: none;
+  }
+  
+  /* Cursor styling */
+  body {
+    /* Custom cursor trail handled by JS */
+  }
+}
+
+/* Ensure sections stack properly */
+section {
+  position: relative;
+}
+
+/* -------- BUTTON STYLES -------- */
+
+/* Pixel button styles */
+.pixel-btn {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid hsl(180 100% 50%);
+  background: hsl(180 100% 50%);
+  color: hsl(220 25% 5%);
+  font-family: 'VT323', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  box-shadow: 0 0 10px hsl(180 100% 50% / 0.3);
+}
+
+.pixel-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px hsl(180 100% 50%), inset 0 0 20px hsl(180 100% 50% / 0.2);
+}
+
+.pixel-btn:active {
+  transform: scale(0.98);
+}
+
+/* Outline button */
+.pixel-btn-outline {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid hsl(280 100% 60%);
+  background: transparent;
+  color: hsl(280 100% 60%);
+  font-family: 'VT323', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  box-shadow: 0 0 5px hsl(280 100% 60% / 0.3);
+}
+
+.pixel-btn-outline:hover {
+  background: hsl(280 100% 60%);
+  color: hsl(220 25% 5%);
+  box-shadow: 0 0 20px hsl(280 100% 60%), inset 0 0 20px hsl(280 100% 60% / 0.2);
+  transform: scale(1.05);
+}
+
+/* -------- ANIMATION FOR SECTION ENTRY -------- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* -------- PIXEL HOVER EFFECTS -------- */
+
+/* Pixel hover effect for interactive elements */
+.pixel-hover {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.pixel-hover::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.pixel-hover:hover::before {
+  border-color: hsl(180 100% 50%);
+  box-shadow: 0 0 10px hsl(180 100% 50%);
+}
+
+/* -------- TEXT & SELECTION STYLING -------- */
+
+/* Text selection styling */
+::selection {
+  background: hsl(280 100% 60% / 0.4);
+  color: white;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(180 100% 50%);
+  outline-offset: 2px;
+}
+
+/* -------- SMOOTH SCROLLBAR -------- */
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220 25% 5%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(280 100% 60%);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(180 100% 50%);
+  box-shadow: 0 0 10px hsl(280 100% 60%);
+}
+
+/* -------- CARD HOVER EFFECTS -------- */
+
+.card-hover {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+              0 0 30px hsl(280 100% 60% / 0.3);
+}
+
+/* -------- ICON ANIMATIONS -------- */
+
+.icon-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.icon-hover:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* -------- BACKGROUND & ENVIRONMENT -------- */
+
+/* Smooth gradient background transitions */
+body {
+  background: hsl(220 25% 5%);
+  transition: background-color 0.3s ease;
+}
+
+/* Page transition effects */
+.page-enter {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.page-exit {
+  animation: fadeInUp 0.3s ease-in reverse;
+}
+
+/* -------- RESPONSIVE ADJUSTMENTS -------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pixel-title {
+    font-size: 2.5rem;
+  }
+  
+  .pixel-btn,
+  .pixel-btn-outline {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.75rem;
+  }
+
+  /* Reduce animation complexity on mobile */
+  .card-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  /* Reduce particle count on mobile */
+  @supports (selector(::-webkit-scrollbar)) {
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --pixel-purple: 280 100% 70%;
+    --pixel-cyan: 180 100% 60%;
+  }
+  
+  .pixel-btn,
+  .pixel-btn-outline {
+    border-width: 3px;
+  }
+}
+
+/* Dark mode support (default) */
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark;
+  }
+  
+  /* Enhance glow effects in dark mode */
+  .neon-hover {
+    box-shadow: 0 0 8px hsl(280 100% 60% / 0.4);
+  }
+  
+  .neon-hover:hover {
+    box-shadow: 0 0 15px hsl(280 100% 60%), 
+                inset 0 0 15px hsl(280 100% 60% / 0.1);
+  }
+}
+
+/* Light mode fallback (if needed) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --pixel-dark: 220 20% 95%;
+    --pixel-darker: 220 25% 90%;
+    --pixel-gray: 220 15% 80%;
+  }
+}
+
+/* -------- PERFORMANCE OPTIMIZATIONS -------- */
+
+/* Enable GPU acceleration for animated elements */
+.animated,
+.btn-hover-glow,
+.card-hover-zoom,
+.scroll-fade-in,
+.scroll-slide-up,
+.pixel-reveal-item {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Prevent CLS by reserving space */
+.loading-placeholder {
+  min-height: 200px;
+}
+
+/* Optimize for print */
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
